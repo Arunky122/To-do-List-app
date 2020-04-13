@@ -1,0 +1,120 @@
+
+<!-- additional innovation is use animation to the whole container as well as each list item -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cf62978ff3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>
+        <%=title%>
+    </title>
+</head>
+<body>
+    <div id="main-container">
+       <h1 id="heading">
+        <i class="fas fa-clipboard-list"></i>
+        To-Do-App
+       </h1>
+        <!-- Main container  -->
+       <div id="form-container">
+           <form action="create-list" method="POST">
+               <!-- Description -->
+               <div id="description">
+                   
+                   <p>DESCRIPTION</p>
+                   <input type="text" name="description" id="description" placeholder="What do you need to do ?" required>
+
+               </div>
+               <!-- Category and Date Container -->
+
+               <div class="category-date-container">
+                   <div id="category-container">
+                       <p>CATEGORY</p>
+                       <select name="category" id="">
+                           <option value="choose a category">Choose a category</option>
+                           <option value="personal">Personal</option>
+                           <option value="work">Work</option>
+                           <option value="school">School</option>
+                           <option value="cleanng">Cleanng</option>
+                           <option value="others">Others</option>
+                       </select>
+                   </div>
+                   <div id="date-container">
+                        <p>Due Date</p>
+                        <input type="date" name="date" id="date" required>
+                   </div>
+
+               </div>
+               <!-- Buttons -->
+
+               <div id="btn-container">
+
+                   <!-- Add button -->
+                   <div>
+                        <button type="submit" id="add-btn"><i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Add Task</button>
+                   </div>
+
+                   <!-- Delete  -->
+                   <div>
+                        <button type="submit" form="delete1" id="del-btn"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;Delete Task</button> 
+                   </div>
+                   
+               </div>
+           </form>
+
+           <!-- Task which are inserted in database -->
+           <div class="list-container">
+
+            
+
+            <!-- Form to 'delete' task from the database -->
+            <form id="delete1" action="/delete-multiple" method="POST" >
+
+                <!-- Fetching data from the database -->
+                <%  for(let i=todo_list.length-1; i>=0;i--) { %>
+                    <div id="task-list">
+                        <div>
+                            <input type="checkbox" id="check-box" name=task value="<%= todo_list[i]._id %>">
+                        </div>
+                        
+                        
+                        <!-- Each task of the todo list -->
+
+                        <div class="task-container">
+                            
+                            <span id="task-description">
+                                <%= todo_list[i].description %>
+                            </span>
+                            <br>
+                            <span id="task-date">
+                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                &nbsp;
+                                <%= todo_list[i].date.toDateString()  %>
+                            </span>
+                        </div>
+                        <div id="task-category"> 
+                            
+                                <%= todo_list[i].category  %>
+                            
+                        </div>
+                        
+                        
+                        
+                    </div>
+                <% } %>
+
+            </form>
+
+        </div>
+
+       </div>
+       
+        
+
+    </div>
+</body>
+</html>

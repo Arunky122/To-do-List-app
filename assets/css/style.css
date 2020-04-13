@@ -1,0 +1,442 @@
+body{
+    margin:0;
+    padding: 0;
+    
+    /* background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d); */
+}
+
+                     /* background animation for main div */
+
+@keyframes pulse{
+    0%{
+        box-shadow: inset 0 0 0 0 rgba(0, 0.9, 0.5, 0);
+    }
+    70%{
+        box-shadow: inset 0 0 5px 10px #ccc;
+        
+    }
+    100%{
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0.7);
+        
+    }
+}
+
+#main-container{
+    width: 90%;
+    text-align: center;
+    /* border:1px solid rgb(3, 3, 3); */
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:3px 3px 5px 6px #ccc;
+    /* box-shadow:         inset 0 0 10px #000000; */
+    /* box-shadow: 0 8px 6px -6px black; */
+    /* animation: pulse 2s infinite; */
+}
+#main-container:hover{
+    animation: pulse 2s infinite;
+}
+#main-container #heading{
+    color: rgb(46, 14, 133);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 900;
+    padding-top: 15px;
+    font-size: 2.5rem;
+}
+             /* Form container */
+#form-container{
+    
+    width: 100%;
+}
+#description{
+    
+    width:95%;
+    margin: auto;
+    /* border: 2px solid white; */
+    /* background-color: rgb(224, 231, 233); */
+    /* box-shadow:0px 1px 1px 1px grey ; */
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+  
+}
+#description p{
+
+    color: black;
+    font-size: 0.9rem;
+    text-align: start;
+    font-weight: bold;
+    
+    font-family: sans-serif;
+
+}
+#description input,textarea{
+    border: none;
+    /* height: 30px; */
+    margin-top:-15px;
+    padding: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#description:hover {
+    background-color:#e6eaeb;
+    
+    transition: 0.4s;
+}
+                /* Caregory and date container */
+.category-date-container{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 97%;
+    margin: auto;
+    max-height: 200px;
+    border-radius: 5px;
+    border-bottom: 1px solid grey;
+}
+#category-container{
+    width:50%;
+    text-align: start;
+   
+}
+#category-container p{
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 5px;
+}
+#category-container select{
+    
+    width: 97%;
+    height: 25px;
+    
+    border: none;
+    margin-left: 5px;
+    background-color: white;
+    margin-bottom: 20px;
+    outline: none;
+}
+#category-container select option{
+    padding: 15px;
+}
+#date-container{
+    width: 50%;
+    border-left: 1px solid grey;
+    text-align: left;
+    
+}
+#date-container p{
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 10px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  
+}
+#date-container input{
+   
+    margin-left: 10px;
+    border: none;
+    width: 95%;
+    outline: none;
+    height: 25px;
+
+}
+
+#category-container:hover {
+    background-color:#e6eaeb ;
+    
+    transition: 0.4s;
+}
+#category-container select:hover{
+    background-color: #e6eaeb;
+    transition: 0.4s;
+}
+#date-container:hover{
+    background-color:#e6eaeb ;
+    
+    transition: 0.4s;
+}
+
+#date-container input:hover{
+    background-color: #e6eaeb;
+    transition: 0.4s;
+}
+/******** Button COntainer*******/
+
+#btn-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-top: 1px soid rgba(0,0,0,0.247);
+    
+    
+}
+
+/***** Add Button*******/
+button{
+    cursor: pointer;
+}
+#add-btn{
+    background-color: #5c69e2;
+    color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 14px;
+    margin-right:25px;
+    font-weight: bold;
+}
+#del-btn{
+    background-color: #ed3824;
+    color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 14px;
+    
+    font-weight: bold;
+}
+#add-btn:hover{
+    background-color: white;
+    color: #5c69e2;
+    transition: 0.2s ease-in-out;
+}
+#del-btn:hover{
+    background-color: white;
+    color: red;
+    transition: 0.2s ease-in-out;
+}
+
+#desc {
+    color:black;
+    font-size: 1.1rem;
+}
+
+
+
+                  /* Task List */
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 95%;
+    margin-left: 2px;
+    padding:5px;
+    margin: auto;
+    margin-top: -20px;
+    
+    
+}
+#task-list{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 5px;
+
+    
+}
+.task-container{
+    flex: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+#task-list:nth-child(2n+1){
+    background-color:#d5eff7 ;
+    color: black;
+}
+#task-list:last-child{
+    margin-bottom: 20px;
+}
+
+#task-list:hover{
+    background-color: #3a3a3d;
+    color: white;
+    box-shadow: 0 8px 6px -6px grey;
+    animation: changesize 0.4s forwards alternate;
+    transition: 0.3s ease-in-out;
+}
+
+#task-description{
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+} 
+#task-date i{
+    font-size: 0.9rem;
+    opacity: 0.7;
+} 
+#task-date{
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-family: sans-serif;
+}
+#task-category{
+    border: 1px solid black;
+    width: 80px;
+    padding-top: 10px;
+    text-transform: capitalize;
+    background-color: white;
+    color: #0c236b;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow:inset 0 0 4px #0c236b;
+   
+}
+
+#check-box{
+    height: 16px;
+    width: 16px;
+    
+    
+}
+@keyframes changesize{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.03);
+    }
+}
+
+
+
+
+
+
+
+/************************************************************************MEDIA QUERIES *******************************************************************************/
+
+@media(max-width:558px){
+    #main-container{
+        width: 85%;
+        margin: auto;
+        
+    }
+    #description{
+        border-bottom: none;
+    }
+    .category-date-container{
+        display: block;
+
+    }
+    #category-container{
+        width: 100%;
+        border-top: 1px solid grey;
+        min-height: 70px;
+        
+    }
+    #category-container select{
+        margin-bottom: 0px;
+    }
+    #date-container{
+        width: 100%;
+        border-top: 1px solid grey;
+        border-left: none;
+        min-height: 70px;
+    }
+    #btn-container{
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+        /* margin: auto; */
+    }
+    #add-btn{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    #del-btn{
+        width: 50%;
+        margin-left: -25px;
+        
+    }
+    #list-container{
+        width: 90%;
+    }
+    #task-list{
+        width: 90%;
+        margin: auto;
+    }
+}
+@media (min-width:558px){
+    #main-container{
+        width: 85%;
+        margin: auto;
+        
+    }
+    #list-container{
+        width: 90%;
+    }
+    #task-list{
+        width: 90%;
+        margin: auto;
+    }
+    
+}
+@media (min-width : 768px){
+
+    #main-container{
+        width: 70%;
+        margin: auto;
+       
+    }
+    #list-container{
+        width: 90%;
+    }
+    #task-list{
+        width: 90%;
+        margin: auto;
+    }
+
+
+}
+
+@media (min-width: 992px){
+    #main-container{
+        width:55%;
+        margin: auto;
+       
+    }
+    #list-container{
+        width: 90%;
+    }
+    #task-list{
+        width: 95%;
+        margin: auto;
+    }
+
+}
+
+@media (min-width:1200px){
+    #main-container{
+        width: 40%;
+        margin: auto;
+       
+    }
+    #list-container{
+        width: 95%;
+    }
+    #task-list{
+        width: 95%;
+        margin: auto;
+    }
+
+  
+}
